@@ -16,13 +16,10 @@ import { FreelancersComponent } from './freelancers/freelancers.component';
     SignupComponent,
     ProfileComponent,
     EmployersComponent,
-    FreelancersComponent
+    FreelancersComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -5,13 +5,13 @@ import { EmployersComponent } from './employers/employers.component';
 import { FreelancersComponent } from './freelancers/freelancers.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', redirectTo: 'AppComponent', pathMatch: 'full' },
   { path: 'freelancers', component: FreelancersComponent },
-  { path: 'employers', component: EmployersComponent }
+  { path: 'employers', component: EmployersComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
