@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Titillium Web', 'sans-serif';
+  margin: 0;
+  background-color:#CED0CE;;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
