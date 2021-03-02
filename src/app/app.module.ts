@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EmployersComponent } from './employers/employers.component';
 import { FreelancersComponent } from './freelancers/freelancers.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { FreelancersComponent } from './freelancers/freelancers.component';
     SignupComponent,
     ProfileComponent,
     EmployersComponent,
-    FreelancersComponent
+    FreelancersComponent,
+
   ],
   imports: [
     BrowserModule,
