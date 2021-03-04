@@ -8,6 +8,9 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployersComponent } from './employers/employers.component';
 import { FreelancersComponent } from './freelancers/freelancers.component';
+import { SubnavComponent } from './freelancers/subnav/subnav.component';
+import { FreelistComponent } from './freelancers/freelist/freelist.component';
+import { FreefindComponent } from './freelancers/freefind/freefind.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,13 @@ import { FreelancersComponent } from './freelancers/freelancers.component';
     SignupComponent,
     ProfileComponent,
     EmployersComponent,
-    FreelancersComponent
+    FreelancersComponent,
+    SubnavComponent,
+    FreelistComponent,
+    FreefindComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
