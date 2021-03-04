@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'freelancers/contacts', component: FreelistComponent },
   { path: 'freelancers/find', component: FreefindComponent },
   { path: 'profile', component: ProfileComponent },
-  {path: 'singup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({
