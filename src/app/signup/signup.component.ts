@@ -10,7 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 export class SignupComponent implements OnInit {
 
-  firstName = 'hello';
+  firstName = '';
   lastName = '';
   email = '';
   authForm = this.fb.group({
