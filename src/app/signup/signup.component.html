@@ -1,1 +1,38 @@
-<p>signup works!</p>
+<div class="main-container">
+  <form class="singup-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <input
+      placeholder="First Name"
+      type="text"
+      formControlName="firstName"
+      [style.border-color]="authForm.value.firstName == '' ? 'red' : 'green'"
+      required
+    />
+
+    <input
+      placeholder="Last Name"
+      type="text"
+      formControlName="lastName"
+      [style.border-color]="authForm.value.lastName == '' ? 'red' : 'green'"
+      required
+    />
+
+    <input
+      type="text"
+      placeholder="email"
+      formControlName="email"
+      required
+      [style.border-color]="authForm.value.email == '' ? 'red' : 'green'"
+    />
+
+    <button
+      type="submit"
+      [disabled]="!authForm.valid"
+      [style.background-color]="
+        !authForm.valid ? 'rgb(184, 187, 184)' : 'rgb(56, 179, 56)'
+      "
+    >
+      Sing Up
+    </button>
+    <p>Sing Up Status: {{ authForm.status }}</p>
+  </form>
+</div>
