@@ -12,6 +12,7 @@ import { FreelancersComponent } from './freelancers/freelancers.component';
 import { SubnavComponent } from './freelancers/subnav/subnav.component';
 import { FreelistComponent } from './freelancers/freelist/freelist.component';
 import { FreefindComponent } from './freelancers/freefind/freefind.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FreefindComponent } from './freelancers/freefind/freefind.component';
     SubnavComponent,
     FreelistComponent,
     FreefindComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
     FormsModule],
