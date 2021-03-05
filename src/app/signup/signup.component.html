@@ -1,29 +1,54 @@
-<div class="main-container">
+<div class="signup-container">
   <form class="singup-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
     <input
-      placeholder="First Name"
-      type="text"
-      formControlName="firstName"
-      [style.border-color]="authForm.value.firstName == '' ? 'red' : 'green'"
-      required
-    />
-
-    <input
-      placeholder="Last Name"
-      type="text"
-      formControlName="lastName"
-      [style.border-color]="authForm.value.lastName == '' ? 'red' : 'green'"
-      required
-    />
-
-    <input
-      type="text"
+      type="email"
       placeholder="email"
       formControlName="email"
-      required
       [style.border-color]="authForm.value.email == '' ? 'red' : 'green'"
+      required
     />
 
+    <input
+      type="password"
+      placeholder="password"
+      formControlName="password"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      title="Password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+      [style.border-color]="authForm.value.password == '' ? 'red' : 'green'"
+      required
+      (ngModelChange)="onChange()"
+    />
+
+    <input
+      type="password"
+      placeholder="confirm password"
+      formControlName="confrimPassword"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      required
+      [style.border-color]="
+        authForm.value.confrimPassword == '' ? 'red' : 'green'
+      "
+    />
+    <ul>
+      password must contain:
+      <li [ngStyle]="{ color: !oneNumber ? 'gray' : 'green' }">
+        at least one number
+      </li>
+      <li
+        [ngStyle]="{
+          color: !latters ? 'gray' : 'green'
+        }"
+      >
+        at one uppercase and lowercase letter
+      </li>
+      <li
+        [ngStyle]="{
+          color: !passwordLength ? 'gray' : 'green'
+        }"
+      >
+        at least 8 or more characters
+      </li>
+    </ul>
     <button
       type="submit"
       [disabled]="!authForm.valid"
