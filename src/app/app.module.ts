@@ -14,6 +14,9 @@ import { FreelistComponent } from './freelancers/freelist/freelist.component';
 import { FreefindComponent } from './freelancers/freefind/freefind.component';
 import { LoginComponent } from './login/login.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselBasicComponent } from './carousel-basic/carousel-basic.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +29,13 @@ import { LoginComponent } from './login/login.component';
     FreelistComponent,
     FreefindComponent,
     LoginComponent,
+    CarouselBasicComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
-    FormsModule],
+    FormsModule,
+    NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
