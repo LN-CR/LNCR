@@ -1,1 +1,30 @@
-<p>login works!</p>
+
+<div class="main-container">
+  <form class="login-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      placeholder="email"
+      formControlName="email"
+      required
+      [style.border-color]="authForm.value.email == '' ? 'red' : 'green'"
+    />
+    <input
+      type="password"
+      class="form-control"
+      placeholder="password"
+      formControlName="password"
+      required
+      [style.border-color]="authForm.value.password == '' ? 'red' : 'green'"
+    />
+
+    <button
+      type="submit"
+      [disabled]="!authForm.valid"
+      [style.background-color]="
+        !authForm.valid ? 'rgb(184, 187, 184)' : 'rgb(56, 179, 56)'
+      "
+    >
+     Login
+    </button>
+  </form>
+</div>
