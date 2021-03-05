@@ -7,6 +7,7 @@ import { FreelancersComponent } from './freelancers/freelancers.component';
 import { FreelistComponent } from './freelancers/freelist/freelist.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AppComponent', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'freelancers/contacts', component: FreelistComponent },
   { path: 'freelancers/find', component: FreefindComponent },
   { path: 'profile', component: ProfileComponent },
-  {path: 'signup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

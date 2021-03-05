@@ -12,9 +12,10 @@ import { FreelancersComponent } from './freelancers/freelancers.component';
 import { SubnavComponent } from './freelancers/subnav/subnav.component';
 import { FreelistComponent } from './freelancers/freelist/freelist.component';
 import { FreefindComponent } from './freelancers/freefind/freefind.component';
+import { LoginComponent } from './login/login.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselBasicComponent } from './carousel-basic/carousel-basic.component';
-
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { CarouselBasicComponent } from './carousel-basic/carousel-basic.componen
     SubnavComponent,
     FreelistComponent,
     FreefindComponent,
+    LoginComponent,
     CarouselBasicComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
     FormsModule,
