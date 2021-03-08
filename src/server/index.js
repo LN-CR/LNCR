@@ -1,21 +1,28 @@
-const { clusterPass, clusterUser } = require('../../secrets');
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv'
+import userRoutes from './routes/user.js'
 
-const { MongoClient } = require('mongodb');
 
-const uri = `mongodb+srv://${clusterUser}:${clusterPass}@lncrcluster.1hmew.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-const client = new MongoClient(uri);
-async function run() {
-  try {
-    await client.connect();
-    const database = client.db('sample_mflix');
-    const movies = database.collection('movies');
-    // Query for a movie that has the title 'Back to the Future'
-    const query = { title: 'Back to the Future' };
-    const movie = await movies.findOne(query);
-    console.log(movie);
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
+const app = express();
+// lets us use .env filees to hide our port and connection url
+dotenv.config()
+
+// lets us upload images to our db
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors());
+
+// here we use our user routes
+app.use('/user', userRoutes);
+
+const PORT = process.env.PORT || 5000
+const CONNECTION_URL = process.env.CONNECTION_URL
+
+// connect to db
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+  .catch((error) => console.log(`${error} did not connect`));
+mongoose.set('useFindAndModify', false);
