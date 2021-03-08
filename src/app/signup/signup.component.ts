@@ -24,11 +24,12 @@ export class SignupComponent implements OnInit {
   oneUpperCaseLatter = statusOfPassword;
   passwordLength = false;
   latters = false;
+  passwordConfErrMsg = false;
 
   authForm = this.fb.group({
     email: ['', Validators.email],
     password: ['', Validators.required],
-    confrimPassword: ['', Validators.required]
+    confirmPassword: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder ) {}
@@ -37,11 +38,13 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.authForm.value.password);
-    console.log(typeof parseInt(this.authForm.value.password[this.authForm.value.password.length - 1], 16));
-
-    this.email = this.authForm.value.email;
+    const password = this.authForm.value.password;
+    const confPassword = this.authForm.value.confirmPassword;
+    if (password !== confPassword) {
+      this.passwordConfErrMsg = true;
+    }
   }
+
   onChange(): void {
 
     const length = this.authForm.value.password.length;
@@ -50,7 +53,7 @@ export class SignupComponent implements OnInit {
     const lowerCase = 'qwertyuioplkjhgfdsazxcvbnm';
     const upperCase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
     const numbers = '1234567890';
-
+    this.passwordConfErrMsg = false;
 
     if (numbers.includes(lastChar) && !this.oneNumber.active){
       this.oneNumber = {active: true,  currentLenth: length};
