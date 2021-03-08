@@ -31,7 +31,7 @@
     />
     <ul>
       password must contain:
-      <li [ngStyle]="{ color: !oneNumber ? 'gray' : 'green' }">
+      <li [ngStyle]="{ color: !oneNumber.active ? 'gray' : 'green' }">
         at least one number
       </li>
       <li
