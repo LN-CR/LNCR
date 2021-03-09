@@ -35,4 +35,10 @@
     border: none;
     color: rgb(252, 250, 250);
   }
+  p {
+    color: red;
+  }
+  .passwordConfErrMsg {
+    display: none;
+  }
 }

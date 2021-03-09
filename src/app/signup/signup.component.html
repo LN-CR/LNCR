@@ -22,16 +22,20 @@
     <input
       type="password"
       placeholder="confirm password"
-      formControlName="confrimPassword"
+      formControlName="confirmPassword"
       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
       required
       [style.border-color]="
-        authForm.value.confrimPassword == '' ? 'red' : 'green'
+        authForm.value.confirmPassword == '' ? 'red' : 'green'
       "
+      (ngModelChange)="onChange()"
     />
+    <p [class.passwordConfErrMsg]="!passwordConfErrMsg">
+      Password confirmation DOES NOT match!
+    </p>
     <ul>
       password must contain:
-      <li [ngStyle]="{ color: !oneNumber ? 'gray' : 'green' }">
+      <li [ngStyle]="{ color: !oneNumber.active ? 'gray' : 'green' }">
         at least one number
       </li>
       <li
